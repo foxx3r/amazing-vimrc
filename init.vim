@@ -176,7 +176,7 @@ set number relativenumber
 
 " WRAP
 " Stop wrapping long lines
-" set nowrap
+ set nowrap
 
 " AUTORELOAD
 " Automatically reload buffers when file changes
