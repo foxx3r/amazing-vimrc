@@ -255,4 +255,4 @@ function! Repl()
         :exec "terminal erl"
     endif
 endfunction
-noremap <C-r> :call Repl() <CR>
+noremap <C-a> :call Repl() <CR>
