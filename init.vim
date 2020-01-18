@@ -20,23 +20,21 @@ function! Executar(arq)
   :w
   if &filetype == 'go'
     :exec '!go run' a:arq
-    :exec '!read'
   elseif &filetype == 'python'
-    :exec '!python3' a:arq
-    :exec '!read'
+    :exec '!pypy' a:arq '|| python3' a:arq
   elseif &filetype == 'javascript'
     :exec '!node' a:arq
   elseif &filetype == 'c'
-    :exec '!clang' a:arq
-    :exec '!read'
+    :exec '!clang' a:arq '|| gcc' a:arq
   elseif &filetype == 'rust'
-    :exec '!cargo run'
+    :exec "!cargo-fmt"
+    :exec '!cargo-clippy && cargo run || cargo run || rustc' a:arq
   elseif &filetype == 'typescript'
     :exec '!tsc -w' a:arq
   elseif &filetype == 'cpp'
-    :exec 'clang++' a:arq
+    :exec '!clang++' a:arq '|| g++' a:arq
   elseif &filetype == 'ruby'
-    :exec 'ruby' a:arq
+    :exec '!ruby' a:arq
   elseif &filetype == 'php'
     :exec '!php' a:arq
   elseif &filetype == 'java'
@@ -51,6 +49,14 @@ function! Executar(arq)
     :exec '!perl' a:arq
   elseif &filetype == 'sh'
     :exec '!bash' a:arq
+  elseif &filetype == "lisp"
+    :exec "!sbcl --script" a:arq
+  elseif &filetype == "prolog"
+    :exec "!swipl" a:arq
+  elseif &filetype == "haskell"
+    :exec "!stack run || cabal run || ghc" a:arq
+  elseif &filetype == "elixir"
+    :exec "!elixir" a:arq
   endif
 endfunction
 
@@ -221,3 +227,32 @@ function! BC_GetChar()
    let b:robstack = strpart(b:robstack, 0, strlen(b:robstack)-1)
    return l:char
 endfunction
+function! Repl()
+    :w
+    if &filetype == "javascript"
+        :exec "!node"
+    elseif &filetype == "lisp"
+        :exec "terminal sbcl"
+    elseif &filetype == "haskell"
+        :exec "terminal ghci"
+    elseif &filetype == "elixir"
+        :exec "terminal iex"
+    elseif &filetype == "python"
+        :exec "terminal python3"
+    elseif &filetype == "v"
+        :exec "terminal v repl"
+    elseif &filetype == "prolog"
+        :exec "terminal swipl"
+    elseif &filetype == "php"
+        :exec "terminal php -a"
+    elseif &filetype == "sh"
+        :exec "terminal"
+    elseif &filetype == "ruby"
+        :exec "terminal irb"
+    elseif &filetype == "scala"
+        :exec "terminal scala"
+    elseif &filetype == "erlang"
+        :exec "terminal erl"
+    endif
+endfunction
+noremap <C-r> :call Repl() <CR>
