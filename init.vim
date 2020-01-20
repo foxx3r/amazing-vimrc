@@ -132,13 +132,9 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-
 " BACKUP
-" Disable all backup files, never used them
-set nobackup
-set nowritebackup
-set noswapfile
-
+set backup
+set writebackup
 
 " SYNTASTIC
 " Syntastic is a syntax checking plugin for Vim that runs files through
@@ -169,13 +165,54 @@ set encoding=utf-8
 " Enhanced command line completion
 set wildmenu
 
+set cursorline
 " Complete files like a shell
 set wildmode=list:longest
 
 " SEARCH
 " Vim will start searching as you type
 set incsearch
+set ttyfast
 
+" Automatically date
+" =============== DATA AUTOMÁTICA ===========================
+" insira na em seus arquivos =   "ultima modificação:"
+" em qualquer das três primeiras linhas
+fun! SetDate()
+  mark z
+  if getline(1) =~ ".* ultima modificação:" ||
+                          \ getline(2) =~ ".*ultima modificação:"  ||
+                          \ getline(3) =~ ".*ultima modificação:"  ||
+                          \ getline(4) =~ ".*ultima modificação:"  ||
+                          \ getline(5) =~ ".*ultima modificação:"
+     exec "1,5s/\s*ultima modificação: .*$/ultima modificação: " . strftime("%c") . "/"
+  endif
+  exec "'z"
+endfun
+"  abaixo a chamada a função de data que é chamada toda vez que você
+"  salva um arquivo preexistente
+fun! LastChange()
+  mark z
+  if getline(1) =~ ".*Last Change:" ||
+                          \ getline(2) =~ ".*Last Change:"  ||
+                          \ getline(3) =~ ".*Last Change:"  ||
+                          \ getline(4) =~ ".*Last Change:"  ||
+                          \ getline(5) =~ ".*Last Change:"
+     exec "1,5s/\s*Last Change: .*$/Last Change: " . strftime("%c") . "/"
+  endif
+     exec "'z"
+endfun
+" coloquei duas opções (alteração e modificação), assim
+" não tem perigo de você esquecer e o sistema
+" não atualizar a data do salvamento, outra melhoria na função
+" é que agora é válida para qualquer tipo de arquivo. se usar
+" num html por exemplo insira um começo de comentário na linha
+" da data e feche o comentário na próxima linha
+"  abaixo a chamada a função de data que é chamada toda vez que você
+"  salva um arquivo preexistente
+au BufWritePre * call SetDate()
+au BufWritePre * call LastChange()
+"============ Fim da Data Automática ===================
 " FILE NUMBERS
 " Enable relative and absolute file numbers
 set number relativenumber
@@ -256,3 +293,45 @@ function! Repl()
     endif
 endfunction
 noremap <C-a> :call Repl() <CR>
+
+" Changelog automático
+" === Cria um registro de alterações de arquivo ========
+" ChangeLog entry convenience
+" Função para inserir um status do arquivo
+" cirado: data de criação, alteração, autor etc (em modo normal)
+fun! InsertChangeLog()
+   normal(1G)
+   call append(0, "// Arquivo: " . expand('%:t1'))
+   call append(1, "// Criado: " . strftime("%a %d/%b/%Y hs %H:%M"))
+   call append(2, "// ultima modificação: " . strftime("%a %d/%b/%Y hs %H:%M"))
+   call append(3, "// Autor: Gustavo Gabriel Santos Bandeira Mignot (foxx3r)")
+   call append(4, "/* * Alterações: */")
+   normal($)
+endfun
+map ,cl :call InsertChangeLog()<cr>A
+"
+" Cria um cabeçalho para scripts bash
+fun! InsertHeadBash()
+   normal(1G)
+   :set ft=bash
+   :set ts=4
+   call append(0, "#!bin/bash")
+   call append(1, "# Criado em:" . strftime("%a %d/%b/%Y hs %H:%M"))
+   call append(2, "# ultima modificação:" . strftime("%a %d/%b/%Y hs %H:%M"))
+   call append(3, "# Nome da empresa")
+   call append(3, "# Propósito do script")
+   normal($)
+endfun
+map ,sh :call InsertHeadBash()<cr>A
+
+"rola janela alternativa
+fun! ScrollOtherWindow(dir)
+    if a:dir == "down"
+        let move = "\<C-E>"
+    elseif a:dir == "up"
+        let move = "\<C-Y>"
+    endif
+    exec "normal \<C-W>p" . move . "\<C-W>p"
+endfun
+nmap <silent> <M-Down> :call ScrollOtherWindow("down")<CR>
+nmap <silent> <M-Up> :call ScrollOtherWindow("up")<CR>
