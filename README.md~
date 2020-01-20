@@ -48,13 +48,12 @@ Atenção:
 
 Exemplo:
 
-```rust
+```rs
 // ultima modificação: 
 // Last Change: 
 fn main() {
     println!("Hello, World!");
-}
-```
+}```
 
 Após isso, salve-o.
 
