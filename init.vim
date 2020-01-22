@@ -76,6 +76,16 @@ call plug#begin('~/.vim/bundle')
     Plug 'scrooloose/nerdcommenter'
     Plug 'rking/ag.vim'
     Plug 'sheerun/vim-polyglot'
+    Plug 'nanotech/jellybeans.vim'
+    Plug 'danilo-augusto/vim-afterglow'
+    Plug 'gregsexton/Atom'
+    Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+    Plug 'ajmwagar/vim-deus'
+    Plug 'dracula/vim'
+    Plug 'whatyouhide/vim-gotham'
+    Plug 'christophermca/meta5'
+    Plug 'joshdick/onedark.vim'
+    Plug 'liuchengxu/space-vim-dark'
 
 call plug#end()
 
@@ -135,6 +145,8 @@ augroup END
 " BACKUP
 set backup
 set writebackup
+set backupdir=/var/tmp/nvim/backups
+set dir=/var/tmp/nvim/swaps
 
 " SYNTASTIC
 " Syntastic is a syntax checking plugin for Vim that runs files through
