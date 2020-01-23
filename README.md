@@ -212,7 +212,32 @@ Para mudar para este tema, insira:
 
 `colorscheme space-vim-dark`
 
-**Dica:** caso queira experimentar novos temas, dentro do vim/neovim, insira `:colorscheme <nome do tema>`. Para desenvolvimento, recomendamos os temas Deus ou Molokai, sendo o Deus o mais completo e Monokai o mais legível.
+**Dica:** caso queira experimentar novos temas, dentro do vim/neovim, insira `:colorscheme <nome do tema>`. Para desenvolvimento, recomendamos os temas Deus ou Molokai, sendo o Deus o mais completo e Molokai o mais legível.
+
+# Suporte ao Termux
+
+Como o sistema de arquivos do Android é diferente, você deverá digitar:
+
+`$ nvim $HOME/.config/nvim/init.vim`
+
+E digitar no modo normal do VIM (ESC):
+
+`?backup`
+
+E você encontrará a configuração de backup, mude ela para:
+
+```
+set backupdir=/data/data/com.termux/files/usr/var/tmp/nvim/backups
+set dir=/data/data/com.termux/files/usr/var/tmp/nvim/swaps
+```
+
+Após isso, feche o VIM/Neovim com `:wq!` e então digite:
+
+`$ mkdir $PREFIX/var/tmp/nvim/backups -p && mkdir $PREFIX/var/tmp/nvim/swaps -p`
+
+Após isso, para acessar os swaps de seus arquivos no termux por exemplo, use:
+
+`$ ls $PREFIX/var/tmp/nvim/swaps`
 
 # Tutorial de VIM
 
