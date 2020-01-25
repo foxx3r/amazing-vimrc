@@ -30,8 +30,11 @@ O script agora suporta os seguintes sistemas operacionais Linux:
 
 - Debian
 - Arch
+- Alpine
 - Fedora
 - Android (Termux)
+
+**Obs:** A cada vez que você atualizar, você terá que rodar `:PlugInstall` novamente.
 
 # Features
 
