@@ -86,6 +86,30 @@ Após usar `Ctrl-w-n` ou `:split`, você poderá rolar a janela abaixo com `ALT 
 
 Obs: Ainda não disponivel com `:vsplit`, não suportado com mais de 2 janelas.
 
+**8. Barra inferior inteligente**
+
+Barra inteligente na qual contém:
+
+- Modo do VIM + informações adicionais
+- Informações do VCS
+- Filename + read-only flags
+- Filetype
+- File encoding
+- Posição atual no arquivo
+- [...] Secção adicional de plugins externos, tais como Syntastic e YCM.
+
+Aonde no final, significa:
+
+**10 words**    - 10 palavras escritas no arquivo
+
+**10%**         - 10% abaixo do top do arquivo
+
+**☰ 105**       - Linha atual é a 105
+
+**/200 ln**     - De 200 linhas
+
+**: 20**        - Coluna 20
+
 # Backup
 
 Existem 2 tipos de backup no VIM/NeoVim:
@@ -211,6 +235,54 @@ Para mudar para este tema, insira:
 Para mudar para este tema, insira:
 
 `colorscheme space-vim-dark`
+
+**Purify**
+
+![purify](https://camo.githubusercontent.com/542aa88bb12c012abc219836615b7b9064fd9998/68747470733a2f2f692e696d6775722e636f6d2f38694e5a5757522e706e67)
+
+Para mudar para este tema, insira:
+
+`colorscheme purify`
+
+**Inkpot**
+
+![inkpot](https://github.com/foxx3r/amazing-vimrc/blob/master/inkpot.png)
+
+Para mudar para este tema, insira:
+
+`colorscheme inkpot`
+
+**Snazzy**
+
+![snazzy](https://github.com/connorholyday/vim-snazzy/blob/master/images/snazzy-css.jpg)
+
+Para mudar para este tema, insira:
+
+`colorscheme snazzy`
+
+**Oceanic Next**
+
+![oceanic-next](https://raw.githubusercontent.com/mhartington/oceanic-next/master/oceanic-next-dark.nvim.png)
+
+Para mudar para este tema, insira:
+
+`colorscheme OceanicNext`
+
+**Tender**
+
+![tender](https://cloud.githubusercontent.com/assets/829859/18417875/4b3e382e-783c-11e6-94ea-afb9bf0d68f2.png)
+
+Para mudar para este tema, insira:
+
+`colorscheme tender`
+
+**Aldmeris**
+
+![aldmeris](https://github.com/foxx3r/amazing-vimrc/blob/master/aldmeris.png)
+
+Para mudar para este tema, insira:
+
+`colorscheme aldmeris`
 
 **Dica:** caso queira experimentar novos temas, dentro do vim/neovim, insira `:colorscheme <nome do tema>`. Para desenvolvimento, recomendamos os temas Deus ou Molokai, sendo o Deus o mais completo e Molokai o mais legível.
 

@@ -86,6 +86,13 @@ call plug#begin('~/.vim/bundle')
     Plug 'christophermca/meta5'
     Plug 'joshdick/onedark.vim'
     Plug 'liuchengxu/space-vim-dark'
+    Plug 'vim-airline/vim-airline'
+    Plug 'kyoz/purify', { 'rtp': 'vim' }
+    Plug 'ciaranm/inkpot'
+    Plug 'connorholyday/vim-snazzy'
+    Plug 'mhartington/oceanic-next'
+    Plug 'jacoborus/tender.vim'
+    Plug 'veloce/vim-aldmeris'
 
 call plug#end()
 
@@ -99,6 +106,10 @@ syntax on
 " Highlight search term. Use :nohl to redraw screen and disable highlight
 set hlsearch
 
+let g:airline#entensions#tabline#enabled = 1
+let g:airline#entensions#tabline#left_sep = ' '
+let g:airline#entensions#tabline#left_alt_sep = '|'
+let g:airline#entensions#tabline#formatter = 'default'
 " Make Ag search from your project root
 let g:ag_working_path_mode="r"
 
