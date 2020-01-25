@@ -1,16 +1,12 @@
 # init.vim para neovim
 
-**Instalacao do neovim em sistemas debian-like:**
+Para instalar o script, digite:
 
-`$ sudo apt install neovim`
+`$ git clone https://github.com/foxx3r/amazing-vimrc`
 
-**Configurando o ambiente:**
+E depois:
 
-`$ mkdir ~/.config -p`
-
-**Instalacao do init.vim:**
-
-`$ git clone https://github.com/foxx3r/amazing-vimrc ~/.config/nvim`
+`$ cd amazing-vimrc; chmod 755 install.sh; ./install.sh`
 
 Para instalar os plugins necessarios, voce precisa das seguintes ferramentas instaladas:
 
@@ -30,7 +26,12 @@ Para atualizar o script, você terá que clonar de novo. Mas eu inserí uma opç
 
 `$ git pull`
 
-O script ainda não é compatível com distribuições não baseadas no Debian, futuramente adicionarei suporte às demais distros.
+O script agora suporta os seguintes sistemas operacionais Linux:
+
+- Debian
+- Arch
+- Fedora
+- Android (Termux)
 
 # Features
 
