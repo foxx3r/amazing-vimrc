@@ -176,7 +176,7 @@ let g:syntastic_javascript_checkers = ['standard']
 
 " COLOR SCHEME
 " Load molokai (alternative to Monokai from TextMate) color scheme
-colorscheme snazzy
+colorscheme molokai
 
 " FONT
 set guifont=Monaco\ for\ Powerline:h12s
