@@ -1,7 +1,7 @@
 #"/usr/bin/bash
-if [ `whoami` == "root" && -e "/data/data/com.termux/files/usr/bin/apt-get" ]
+if [[ `whoami` == "root" && -e "/data/data/com.termux/files/usr/bin/apt-get" ]]
 then
-    # nada
+    cd . # nada
 elif [ `whoami` == "root" ]
 then
     echo "você precisa ser root para executar este script"
@@ -32,12 +32,12 @@ then
     apt-get install neovim -y > /dev/null
 fi
 
-if [ -d "~/.config/nvim" ]
+if [ -d "$HOME/.config/nvim" ]
 then
     rm -rf ~/.config/nvim
 fi
 
-git clone https://github.com/foxx3r/amazing-vimrc ~/.config/nvim
+git clone https://github.com/foxx3r/amazing-vimrc ~/.config/nvim > /dev/null
 
 if [ -e "/data/data/com.termux/files/usr/bin/apt-get" ]
 then
