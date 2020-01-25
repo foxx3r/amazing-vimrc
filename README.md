@@ -111,6 +111,12 @@ Aonde no final, significa:
 
 **: 20**        - Coluna 20
 
+# Fontes
+
+Algumas pessoas vieram me perguntar como mudar a fonte no VIM, infelizmente não há como fazer isso no VIM mas você pode usar o gVIM e modificar a variável gui_font.
+
+Mas se você quiser mudar a fonte do VIM, ela é a mesma do seu terminal :).
+
 # Backup
 
 Existem 2 tipos de backup no VIM/NeoVim:
