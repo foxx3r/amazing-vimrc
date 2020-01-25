@@ -42,8 +42,8 @@ git clone https://github.com/foxx3r/amazing-vimrc ~/.config/nvim > /dev/null
 if [ -e "/data/data/com.termux/files/usr/bin/apt-get" ]
 then
     mkdir $PREFIX/var/tmp/nvim/backups -p
-    sed -i "s/\/var\/tmp\/nvim\/backups/\/data\/data\/com.termux\/usr\/var\/tmp\/nvim\/backups/" $HOME/.config/nvim/init.vim
-    sed -i "s/\/var\/tmp\/nvim\/swaps/\/data\/data\/com.termux\/usr\/var\/tmp\/nvim\/swaps/" $HOME/.config/nvim/init.vim
+    sed -i "s/\/var\/tmp\/nvim\/backups/\/data\/data\/com.termux\/files\/usr\/var\/tmp\/nvim\/backups/" $HOME/.config/nvim/init.vim
+    sed -i "s/\/var\/tmp\/nvim\/swaps/\/data\/data\/com.termux\/files\/usr\/var\/tmp\/nvim\/swaps/" $HOME/.config/nvim/init.vim
 else
     mkdir /var/tmp/nvim/backups -p
 fi
