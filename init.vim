@@ -156,8 +156,8 @@ augroup END
 " BACKUP
 set backup
 set writebackup
-set backupdir=/var/tmp/nvim/backups
-set dir=/var/tmp/nvim/swaps
+set backupdir=/data/data/com.termux/files/usr/var/tmp/nvim/backups
+set dir=/data/data/com.termux/files/usr/var/tmp/nvim/swaps
 
 " SYNTASTIC
 " Syntastic is a syntax checking plugin for Vim that runs files through
