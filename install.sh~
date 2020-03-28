@@ -45,12 +45,12 @@ then
     echo "\" BACKUP" >> ~/.config/nvim/init.vim
     echo "set backup" >> ~/.config/nvim/init.vim
     echo "set writebackup" >> ~/.config/nvim/init.vim
-    echo "set backupdir=$PREFIX/var/tmp/nvim/backups" >> ~/.config/nvim/init.vim
+    echo "set backup=$PREFIX/var/tmp/nvim/backups" >> ~/.config/nvim/init.vim
     echo "set dir=$PREFIX/var/tmp/nvim/swaps" >> ~/.config/nvim/init.vim
 else
     mkdir /var/tmp/nvim/backups -p
     echo "\" BACKUP" >> ~/.config/nvim/init.vim
-    echo "set backupdir" >> ~/.config/nvim/init.vim
+    echo "set backup" >> ~/.config/nvim/init.vim
     echo "set writebackup" >> ~/.config/nvim/init.vim 
     echo "set backup=/var/tmp/nvim/backups" >> ~/.config/nvim/init.vim 
     echo "set dir=/var/tmp/nvim/swaps" >> ~/.config/nvim/init.vim
