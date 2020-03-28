@@ -37,7 +37,7 @@ then
     rm -rf ~/.config/nvim
 fi
 
-git clone https://github.com/foxx3r/amazing-vimrc ~/.config/nvim > /dev/null
+git clone https://github.com/foxx3r/amazing-vimrc ~/.config/nvim 2> /dev/null
 
 if [ -e "/data/data/com.termux/files/usr/bin/apt-get" ]
 then
