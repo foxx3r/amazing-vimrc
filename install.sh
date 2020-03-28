@@ -42,10 +42,18 @@ git clone https://github.com/foxx3r/amazing-vimrc ~/.config/nvim > /dev/null
 if [ -e "/data/data/com.termux/files/usr/bin/apt-get" ]
 then
     mkdir $PREFIX/var/tmp/nvim/backups -p
-    sed -i "s/\/var\/tmp\/nvim\/backups/\/data\/data\/com.termux\/files\/usr\/var\/tmp\/nvim\/backups/" $HOME/.config/nvim/init.vim
-    sed -i "s/\/var\/tmp\/nvim\/swaps/\/data\/data\/com.termux\/files\/usr\/var\/tmp\/nvim\/swaps/" $HOME/.config/nvim/init.vim
+    echo "\" BACKUP" >> ~/.config/nvim/init.vim
+    echo "set backup" >> ~/.config/nvim/init.vim
+    echo "set writebackup" >> ~/.config/nvim/init.vim
+    echo "set backup=$PREFIX/var/tmp/nvim/backups" >> ~/.config/nvim/init.vim
+    echo "set dir=$PREFIX/var/tmp/nvim/swaps" >> ~/.config/nvim/init.vim
 else
     mkdir /var/tmp/nvim/backups -p
+    echo "\" BACKUP" >> ~/.config/nvim/init.vim
+    echo "set backup" >> ~/.config/nvim/init.vim
+    echo "set writebackup" >> ~/.config/nvim/init.vim 
+    echo "set backup=/var/tmp/nvim/backups" >> ~/.config/nvim/init.vim 
+    echo "set dir=/var/tmp/nvim/swaps" >> ~/.config/nvim/init.vim
 fi
 
 echo "pronto! agora entre no NeoVim digitando 'nvim' e rode :PlugInstall (ou :PlugI, ele auto-completa pra gente :))"

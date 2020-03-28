@@ -153,12 +153,6 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-" BACKUP
-set backup
-set writebackup
-set backupdir=/data/data/com.termux/files/usr/var/tmp/nvim/backups
-set dir=/data/data/com.termux/files/usr/var/tmp/nvim/swaps
-
 " SYNTASTIC
 " Syntastic is a syntax checking plugin for Vim that runs files through
 " external syntax checkers and displays any resulting errors to the user.
