@@ -284,7 +284,7 @@ endfunction
 function! Repl()
     :w
     if &filetype == "javascript"
-        :exec "!node"
+        :exec "terminal node"
     elseif &filetype == "lisp"
         :exec "terminal sbcl"
     elseif &filetype == "haskell"
