@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 if [[ `whoami` == "root" && -e "/data/data/com.termux/files/usr/bin/apt-get" ]]
 then
     cd . # nada
