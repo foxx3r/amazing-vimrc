@@ -2,7 +2,7 @@
 if [[ `whoami` == "root" && -e "/data/data/com.termux/files/usr/bin/apt-get" ]]
 then
     cd . # nada
-elif [ `whoami` == "root" ]
+elif [ `whoami` != "root" ]
 then
     echo "você precisa ser root para executar este script"
     exit 1
