@@ -52,7 +52,7 @@ else
     echo "\" BACKUP" >> ~/.config/nvim/init.vim
     echo "set backupdir" >> ~/.config/nvim/init.vim
     echo "set writebackup" >> ~/.config/nvim/init.vim 
-    echo "set backup=/var/tmp/nvim/backups" >> ~/.config/nvim/init.vim 
+    echo "set backupdir=/var/tmp/nvim/backups" >> ~/.config/nvim/init.vim 
     echo "set dir=/var/tmp/nvim/swaps" >> ~/.config/nvim/init.vim
 fi
 
