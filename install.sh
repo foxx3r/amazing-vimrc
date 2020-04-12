@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ `whoami` == "root" && -e "/data/data/com.termux/files/usr/bin/apt-get" ]]
+if [[ `whoami` != "root" && -e "/data/data/com.termux/files/usr/bin/apt-get" ]]
 then
     cd . # nada
 elif [ `whoami` != "root" ]
