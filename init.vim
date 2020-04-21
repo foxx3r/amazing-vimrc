@@ -1,5 +1,7 @@
-" Author: Filipe Deschamps
-" Source: https://github.com/filipedeschamps/dotfiles
+" Author: Gabriel (@foxx3r)
+" Source: https://github.com/foxx3r/amazing-vimrc
+" Contrib:;Filipe Deschamps
+" Contrib Source: ttps://github.com/filipedeschamps/dotfiles
 
 " LEADER KEY
 let mapleader=","
@@ -11,11 +13,13 @@ set t_ut=
 
 " BUNDLE
 " Automatically download vim-plug if it doesn't exist
-"if empty(glob('~/.vim/autoload/plug.vim'))
-  "silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-"    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-"endif
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Runner de diversas linguagens mapeadas em CTRL + g
 function! Executar(arq)
   :w
   if &filetype == 'go'
@@ -59,7 +63,6 @@ function! Executar(arq)
     :exec "!elixir" a:arq
   endif
 endfunction
-
 noremap <C-g> :call Executar(shellescape(@%, 1))<CR>
 
 " Configure vim-plug
@@ -110,18 +113,18 @@ syntax on
 " Highlight search term. Use :nohl to redraw screen and disable highlight
 set hlsearch
 
+" vim-airline config
 let g:airline#entensions#tabline#enabled = 1
 let g:airline#entensions#tabline#left_sep = ' '
 let g:airline#entensions#tabline#left_alt_sep = '|'
 let g:airline#entensions#tabline#formatter = 'default'
+
 " Make Ag search from your project root
 let g:ag_working_path_mode="r"
 
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
-
-let g:deoplete#enable_at_startup = 1
 
 " AUTO IDENTATION
 " Enable auto identation with 'spaces' instead of 'tabs'
@@ -158,7 +161,9 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
+" Habilitando o omnifunc
 set omnifunc=syntaxcomplete#Complete
+
 " SYNTASTIC
 " Syntastic is a syntax checking plugin for Vim that runs files through
 " external syntax checkers and displays any resulting errors to the user.
@@ -195,6 +200,8 @@ set wildmode=list:longest
 " SEARCH
 " Vim will start searching as you type
 set incsearch
+
+" Aumemta a velocidade e desempenho
 set ttyfast
 
 " Automatically date
@@ -254,9 +261,10 @@ set autoread
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" Syntastic
+" Syntastic map
 nnoremap <leader>st :SyntasticToggleMode<cr>
 
+" Configuração do pyls para o LSP
 if executable('pyls')
     " pip install python-language-server
     au User lsp_setup call lsp#register_server({
@@ -310,6 +318,8 @@ function! BC_GetChar()
    let b:robstack = strpart(b:robstack, 0, strlen(b:robstack)-1)
    return l:char
 endfunction
+
+" Abre a REPL.automaticamente
 function! Repl()
     :w
     if &filetype == "javascript"
@@ -355,7 +365,7 @@ fun! InsertChangeLog()
    normal($)
 endfun
 map ,cl :call InsertChangeLog()<cr>A
-"
+
 " Cria um cabeçalho para scripts bash
 fun! InsertHeadBash()
    normal(1G)
