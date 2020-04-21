@@ -93,6 +93,10 @@ call plug#begin('~/.vim/bundle')
     Plug 'mhartington/oceanic-next'
     Plug 'jacoborus/tender.vim'
     Plug 'veloce/vim-aldmeris'
+    Plug 'prabirshrestha/async.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'mattn/vim-lsp-settings'
 
 call plug#end()
 
@@ -117,6 +121,7 @@ let g:ag_working_path_mode="r"
 set ignorecase
 set smartcase
 
+let g:deoplete#enable_at_startup = 1
 
 " AUTO IDENTATION
 " Enable auto identation with 'spaces' instead of 'tabs'
@@ -153,6 +158,7 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
+set omnifunc=syntaxcomplete#Complete
 " SYNTASTIC
 " Syntastic is a syntax checking plugin for Vim that runs files through
 " external syntax checkers and displays any resulting errors to the user.
@@ -250,6 +256,29 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " Syntastic
 nnoremap <leader>st :SyntasticToggleMode<cr>
+
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> <f2> <plug>(lsp-rename)
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 " NERDTree
 nnoremap <leader>ft :NERDTreeToggle<cr>

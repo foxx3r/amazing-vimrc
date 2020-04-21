@@ -152,6 +152,13 @@ Existem 2 tipos de backup no VIM/NeoVim:
 
 **vim-editorconfig** - Extende as possibilidades de configuração do VIM
 
+# Servidor LSP
+Um servidor LSP significa que é um servidor com suporte a várias linguagens, no nosso caso, incluímos a parte da Instalação dele no install.sh, porém, se for de sua vontade, pode instalá-lo manualmente após olhar o install.sh.
+
+Para obter os benefícios do servidor LSP, entre em qualquer arquivo, e digite `:LspInstallServer`, após isso, ele procurará pela extensão do arquivo, o plugin certo para aquele tipo de arquivo.
+
+Para testar o autocomplete, depois de instalar o plugin do LSP, aperte CTRL + x & CTRL + o.
+
 # Temas
 
 **Molokai:**
