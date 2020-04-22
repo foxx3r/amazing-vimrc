@@ -1,12 +1,6 @@
 #!/bin/bash
-if [[ -e "/data/data/com.termux/files/usr/bin/apt-get" ]]
-then
-    cd . # nada
-elif [ `whoami` != "root" ]
-then
-    echo "você precisa ser root para executar este script"
-    exit 1
-fi
+echo "ATENÇÃO: você precisa ser root para executar este script, a menos que você esteja usando termux"
+sleep 3
 
 echo "instalando o neovim..."
 
