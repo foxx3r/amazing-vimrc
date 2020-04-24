@@ -28,12 +28,14 @@ elif [ -e "/data/data/com.termux/files/usr/bin/apt-get" ]
 then
     apt-get update > /dev/null
     apt-get install neovim -y > /dev/null
-    apt-get install neovim -y > /dev/null
+    apt-get install nodejs -y > /dev/null
 fi
 
 if [ -d "$HOME/.config/nvim" ]
 then
     rm -rf ~/.config/nvim
+else
+    mkdir -p ~/.config/nvim
 fi
 
 git clone https://github.com/foxx3r/amazing-vimrc ~/.config/nvim 2> /dev/null
