@@ -391,3 +391,9 @@ fun! ScrollOtherWindow(dir)
 endfun
 nmap <silent> <M-Down> :call ScrollOtherWindow("down")<CR>
 nmap <silent> <M-Up> :call ScrollOtherWindow("up")<CR>
+
+set nocursorcolumn
+set nocursorline
+set norelativenumber
+set lazyredraw
+syntax sync minlines=256
