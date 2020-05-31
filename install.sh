@@ -9,6 +9,7 @@ then
     apt-get update > /dev/null
     apt-get install neovim -y > /dev/null
     apt-get install nodejs -y > /dev/null
+    apt-get install npm -y > /dev/null
 elif [ -e "/bin/dnf" ]
 then
     dnf check-update
