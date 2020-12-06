@@ -42,7 +42,7 @@ else
     mkdir -p ~/.config/nvim
 fi
 
-git clone https://github.com/foxx3r/amazing-vimrc ~/.config/nvim
+git clone https://github.com/dheisom-gomes/amazing-vimrc -b novas-melhorias ~/.config/nvim
 
 mkdir -p ~/.local/share/nvim/backup ~/.local/share/nvim/swaps
 cat << EOF >> ~/.config/nvim/init.vim
