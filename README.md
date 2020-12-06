@@ -6,6 +6,12 @@ Este script instala 32 temas e plugins em seu NeoVim/Vim para deixa-lo muito bon
 curl -s -o- https://raw.githubusercontent.com/dheisom-gomes/amazing-vimrc/novas-melhorias/install.sh | bash
 ```
 
+ou
+
+```bash
+wget -q -O- https://raw.githubusercontent.com/dheisom-gomes/amazing-vimrc/novas-melhorias/install.sh | bash
+```
+
 Para instalar os plugins necessarios, você precisa do `curl` e do `git` instalados, alem do `NeoVim` ou `Vim`
 
 # Instalação no VIM

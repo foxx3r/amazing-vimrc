@@ -42,7 +42,7 @@ function! Executar(arq)
   elseif &filetype == 'php'
     :exec '!php' a:arq
   elseif &filetype == 'java'
-    :exec '!javac' a:arq
+    :exec '!javac ' a:arq
   elseif &filetype == 'cs'
     :exec '!dotnet run'
   elseif &filetype == 'matlab'
