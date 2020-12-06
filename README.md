@@ -1,20 +1,12 @@
-# init.vim para neovim
+# Um init.vim para seu NeoVim/Vim
 
-Para instalar o script, digite:
+Este script instala 32 temas e plugins em seu NeoVim/Vim para deixa-lo muito bonito, para instalar execute:
 
-`$ git clone https://github.com/foxx3r/amazing-vimrc`
-
-E depois:
-
-`$ cd amazing-vimrc; chmod 755 install.sh; ./install.sh`
-
-Para instalar os plugins necessarios, voce precisa das seguintes ferramentas instaladas:
-
+```bash
+curl -s -o- https://raw.githubusercontent.com/dheisom-gomes/amazing-vimrc/novas-melhorias/install.sh | bash
 ```
-curl
-git
-wget
-```
+
+Para instalar os plugins necessarios, você precisa do `curl` e do `git` instalados, alem do `NeoVim` ou `Vim`
 
 # Instalação no VIM
 
@@ -22,9 +14,7 @@ Não recomendo o uso do VIM até porque eu não o testei, mas caso queira do mes
 
 # Atualização
 
-Para atualizar o script, você terá que clonar de novo. Mas eu inserí uma opção no install.sh para contornar este meu erro. Então futuramente, caso queira atualizar, basta apenas digitar:
-
-`$ git pull`
+Para atualizar o script, você só precisa executar o mesmo comando de instalar ;)
 
 O script agora suporta os seguintes sistemas operacionais Linux:
 

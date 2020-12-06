@@ -29,14 +29,14 @@ function! Executar(arq)
   elseif &filetype == 'javascript'
     :exec '!node' a:arq
   elseif &filetype == 'c'
-    :exec '!clang' a:arq '|| gcc' a:arq
+    :exec '!out=$RANDOM.bin; clang -o $out' a:arq '|| gcc -o $out' a:arq '; ./$out; rm -rf $out'
   elseif &filetype == 'rust'
     :exec "!cargo-fmt"
-    :exec '!cargo-clippy && cargo run || cargo run || rustc' a:arq
+    :exec '!cargo-clippy && cargo run || cargo run || out=$RANDOM.bin rustc -o $out' a:arq ' && { ./$out; rm -rf $out; }'
   elseif &filetype == 'typescript'
     :exec '!tsc -w' a:arq
   elseif &filetype == 'cpp'
-    :exec '!clang++' a:arq '|| g++' a:arq
+    :exec '!out=$RANDOM.bin; clang++ -o $out' a:arq '|| g++ -o $out' a:arq '; ./$out; rm -rf $out'
   elseif &filetype == 'ruby'
     :exec '!ruby' a:arq
   elseif &filetype == 'php'
@@ -46,7 +46,7 @@ function! Executar(arq)
   elseif &filetype == 'cs'
     :exec '!dotnet run'
   elseif &filetype == 'matlab'
-    :exec '!gcc `gnustep-config --objc-flags` -lgnustep-base' a:arq
+    :exec '!out=$RANDOM.bin; gcc `gnustep-config --objc-flags` -lgnustep-base -o $out' a:arq ' && ./$out; rm -rf $out'
   elseif &filetype == 'swift'
     :exec '!swift' a:arq
   elseif &filetype == 'perl'
@@ -61,6 +61,10 @@ function! Executar(arq)
     :exec "!stack run || cabal run || ghc" a:arq
   elseif &filetype == "elixir"
     :exec "!elixir" a:arq
+  elseif &filetype == "lua"
+    :exec '!lua' a:arq
+  elseif &filetype == "zig"
+    :exec '!zig run' a:arq
   endif
 endfunction
 noremap <C-g> :call Executar(shellescape(@%, 1))<CR>
