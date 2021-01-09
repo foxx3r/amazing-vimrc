@@ -48,11 +48,11 @@ Para adicionar o log de última modificação no seu VIM, adicione `ultima modif
 
 **4. Atalho para salvar**
 
-Use CTRL+S e você ira salvar seu arquivo rapidamente.
+Use `CTRL+S` e você ira salvar seu arquivo rapidamente.
 
 **5. Atalho para sair**
 
-Use CTRL+Q e você saira do arquivo caso já esteja salvo, caso contrario é preciso usar o ESC+:q! mesmo ou salvar antes.
+Use `CTRL+Q` e você saira do arquivo caso já esteja salvo, caso contrario é preciso usar o `ESC+:q!` mesmo ou salvar antes.
 
 Atenção:
 
