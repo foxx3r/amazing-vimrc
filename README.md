@@ -46,6 +46,14 @@ Para rodar a REPL, use `CTRL + a`
 
 Para adicionar o log de última modificação no seu VIM, adicione `ultima modificação: ` e `Last Change: ` nas 5 primeiras linhas do seu projeto. 
 
+**4. Atalho para salvar**
+
+Use CTRL+S e você ira salvar seu arquivo rapidamente.
+
+**5. Atalho para sair**
+
+Use CTRL+Q e você saira do arquivo caso já esteja salvo, caso contrario é preciso usar o ESC+:q! mesmo ou salvar antes.
+
 Atenção:
 
 1 - Os seus projetos devem conter os dois comentários, obrigatoriamente, caso contrário, não funcionará.
