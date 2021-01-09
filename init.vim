@@ -68,6 +68,8 @@ function! Executar(arq)
   endif
 endfunction
 noremap <C-g> :call Executar(shellescape(@%, 1))<CR>
+noremap <C-s> :w! <CR>
+noremap <C-q> :q <CR>
 
 " Configure vim-plug
 call plug#begin('~/.vim/bundle')
