@@ -100,9 +100,15 @@ call plug#begin('~/.vim/bundle')
     Plug 'prabirshrestha/asyncomplete-lsp.vim'
     Plug 'prabirshrestha/vim-lsp'
     Plug 'mattn/vim-lsp-settings'
+    Plug 'mattn/emmet-vim'
 
 call plug#end()
-
+" Português
+" Emmet.vim e o mesmo do Vscode(visual studio code)
+" ele avi ajudar voce a escrever codigos html mas rapido
+" English
+" Emmet.vim is the same as Vscode (visual studio code)
+"  it helps you write html codes faster
 
 " SYNTAX
 " Enable syntax highlighting
