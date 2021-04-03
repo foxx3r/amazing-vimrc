@@ -152,6 +152,33 @@ Existem 2 tipos de backup no VIM/NeoVim:
 
 **vim-editorconfig** - Extende as possibilidades de configuração do VIM
 
+**emmit** - Auto complete para arquivo com a extensão HTML
+
+#Como usar Emmit.vim
+
+<p>Entre num arquivo HTML com o neovim</p>
+
+**Comandos básicos**
+   ` ! ou html:5
+         +
+   CTRL + y + ,`
+
+```<!DOCTYPE html>
+  2 <html lang="en">
+  3 <head>
+  4     <meta charset="UTF-8">
+  5     <title></title>
+  6 </head>
+  7 <body>                                                  8
+  9 </body>
+ 10 </html>```
+**Outros**
+     section.container + CTRL + y ,
+        
+      Resultado final:
+     ```<section class="container">
+     </section>```
+NB: Certifique-se que não fale os seguintes comandos `CTRL + y ,` esses comandos são essenciais para o funcionamento do Emmet
 # Servidor LSP
 Um servidor LSP significa que é um servidor com suporte a várias linguagens, no nosso caso, incluímos a parte da Instalação dele no install.sh, porém, se for de sua vontade, pode instalá-lo manualmente após olhar o install.sh.
 
