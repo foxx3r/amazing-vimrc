@@ -163,7 +163,8 @@ Existem 2 tipos de backup no VIM/NeoVim:
          +
    CTRL + y + ,`
 
-```<!DOCTYPE html>
+```
+<!DOCTYPE html>
   2 <html lang="en">
   3 <head>
   4     <meta charset="UTF-8">
@@ -171,13 +172,21 @@ Existem 2 tipos de backup no VIM/NeoVim:
   6 </head>
   7 <body>                                                  8
   9 </body>
- 10 </html>```
+ 10 </html>
+
+```
+
 **Outros**
      section.container + CTRL + y ,
         
       Resultado final:
-     ```<section class="container">
-     </section>```
+
+```
+<section class="container">
+     </section>
+```
+
+
 NB: Certifique-se que não fale os seguintes comandos `CTRL + y ,` esses comandos são essenciais para o funcionamento do Emmet
 # Servidor LSP
 Um servidor LSP significa que é um servidor com suporte a várias linguagens, no nosso caso, incluímos a parte da Instalação dele no install.sh, porém, se for de sua vontade, pode instalá-lo manualmente após olhar o install.sh.
